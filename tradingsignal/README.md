@@ -81,3 +81,29 @@ docker-compose down -v
 ## Architecture Overview
 
 ### Project Structure
+
+    src/main/java/com/trading/trading_signal/
+    ├── controller/
+    │   └── SignalController.java       # REST endpoints
+    ├── service/
+    │   ├── SignalService.java          # Core orchestration layer
+    │   ├── SignalValidator.java        # BUY/SELL/time business rules
+    │   ├── SignalStatusEvaluator.java  # Status transitions + ROI calculation
+    │   ├── SignalScheduler.java        # Background job every 30 seconds
+    │   └── BinancePriceService.java   # Binance API via WebClient
+    ├── repository/
+    │   └── SignalRepository.java      # Spring Data JPA
+    ├── modal/
+    │   ├── Signal.java                # JPA entity
+    │   ├── Direction.java             # BUY / SELL enum
+    │   └── SignalStatus.java          # OPEN / TARGET_HIT / STOPLOSS_HIT / EXPIRED
+    ├── dto/
+    │   ├── SignalRequestDTO.java      # Incoming request with Bean Validation
+    │   └── SignalResponseDTO.java     # Outgoing response
+    ├── mapper/
+    │   └── SignalMapper.java          # DTO ↔ Entity conversion
+    └── exception/
+        ├── GlobalExceptionHandler.java
+        ├── SignalNotFoundException.java
+        ├── BinanceApiException.java
+        └── ErrorResponse.java
