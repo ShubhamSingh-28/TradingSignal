@@ -8,7 +8,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update   # fine for this assignment; mention Flyway as bonus in README
+      ddl-auto: update   
     show-sql: true
     properties:
       hibernate:
