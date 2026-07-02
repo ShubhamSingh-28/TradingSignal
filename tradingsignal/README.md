@@ -15,7 +15,7 @@ A Spring Boot backend that creates and tracks crypto trading signals against liv
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/yourusername/tradingsignal.git
+git clone https://github.com/ShubhamSingh-28/tradingsignal.git
 cd tradingsignal/tradingsignal
 ```
 
